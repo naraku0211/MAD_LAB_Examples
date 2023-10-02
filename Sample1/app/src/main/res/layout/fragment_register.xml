@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/FloralWhite">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:fontFamily="@font/squashy_flow"
+        android:textColor="@color/DarkCyan"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:padding="15dp"
+            android:hint="@string/username"
+            app:startIconDrawable="@drawable/ic_profile"
+            app:startIconContentDescription="@string/username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registerUsername"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="@string/password"
+            app:startIconDrawable="@drawable/ic_lock_24dp"
+            app:startIconContentDescription="@string/password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registerPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/personal_details"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@color/Coral"
+            android:fontFamily="@font/squashy_flow"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="@string/fname"
+            app:startIconDrawable="@drawable/ic_profile"
+            app:startIconContentDescription="@string/fname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registerFName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="@string/lname"
+            app:startIconDrawable="@drawable/ic_profile"
+            app:startIconContentDescription="@string/lname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registerLName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/registerSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/submit"
+            android:textSize="30sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
