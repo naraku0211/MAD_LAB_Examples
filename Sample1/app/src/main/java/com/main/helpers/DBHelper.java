@@ -32,7 +32,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 + col_lastName + " TEXT)";
         db.execSQL(query);
     }
-
     public void addUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues userValues = new ContentValues();
@@ -46,7 +45,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.close();
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);

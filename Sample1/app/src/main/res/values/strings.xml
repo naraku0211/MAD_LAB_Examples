@@ -8,4 +8,6 @@
     <string name="fname">FIRST NAME</string>
     <string name="lname">LAST NAME</string>
     <string name="personal_details">Personal Details</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -87,9 +87,11 @@
 
     </LinearLayout>
 
-    <fragment
+    <!-- res/layout/activity_login.xml -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </fragment>
+        android:layout_height="match_parent"
+        android:name="com.main.fragments.RegisterFragment" />
 
 </LinearLayout>

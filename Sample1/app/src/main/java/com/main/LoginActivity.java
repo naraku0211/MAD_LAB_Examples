@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.main.fragments.RegisterFragment;
 
 public class LoginActivity extends AppCompatActivity {
     private Button submit, register;
@@ -42,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         register.setOnClickListener(v -> {
-
+            new RegisterFragment().show(getSupportFragmentManager(), RegisterFragment.TAG);
         });
     }
 }
