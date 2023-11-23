@@ -9,7 +9,7 @@ import com.main.models.User;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "AttendanceDB";
+    private static final String DB_NAME = "CustomerDB";
     private static final int DB_VERSION = 1;
     private static final String TABLE_NAME = "users";
     private static final String col_ID = "user_id";
