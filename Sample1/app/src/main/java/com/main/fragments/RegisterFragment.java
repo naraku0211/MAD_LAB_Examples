@@ -26,6 +26,7 @@ public class RegisterFragment extends DialogFragment {
 
     private TextInputEditText rUsername, rPassword, rFirstName, rLastName;
     private DBHelper dbHelper;
+    private User user;
     private LayoutInflater inflater;
     private View view;
     private AlertDialog.Builder builder;
@@ -39,7 +40,7 @@ public class RegisterFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-
+        builder  = new AlertDialog.Builder(requireActivity());
         inflater = requireActivity().getLayoutInflater();
         view = inflater.inflate(R.layout.fragment_register, null);
 
@@ -48,28 +49,28 @@ public class RegisterFragment extends DialogFragment {
         rFirstName = view.findViewById(R.id.registerFName);
         rLastName = view.findViewById(R.id.registerLName);
 
-        builder  = new AlertDialog.Builder(getActivity());
-        builder.setTitle(R.string.personal_details);
-        builder.setView(view);
+        dbHelper = new DBHelper(view.getContext());
 
-        User user = new User(rUser, rPass, rFname, rLname);
+        builder.setView(view)
+                .setTitle(R.string.personal_details)
+                .setPositiveButton(getString(R.string.okay), (dialog, which) -> {
+                    rUser = rUsername.getText().toString();
+                    rPass = rPassword.getText().toString();
+                    rFname = rFirstName.getText().toString();
+                    rLname = rLastName.getText().toString();
+                    if(!TextUtils.isEmpty(rUser) && !TextUtils.isEmpty(rPass)
+                        && !TextUtils.isEmpty(rFname) && !TextUtils.isEmpty(rLname)){
 
-        builder.setPositiveButton(getString(R.string.okay), (dialog, which) -> {
+                        user = new User(rUser, rPass, rFname, rLname);
 
-           /* if(!TextUtils.isEmpty(rUser) && !TextUtils.isEmpty(rPass)
-                    && !TextUtils.isEmpty(rFname) && !TextUtils.isEmpty(rLname) ){
-
-            }
-            else {
-                Toast.makeText(view.getContext(), "Please enter fields", Toast.LENGTH_SHORT).show();
-            }
-
-            */
-
-            dbHelper.addUser(user);
-        });
-
-        builder.setNegativeButton(getString(R.string.cancel), (dialog, which) -> {
+                        dbHelper.addUser(user);
+                        Toast.makeText(getActivity(), "The account was successfully registered.", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "Please enter fields.", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton(getString(R.string.cancel), (dialog, which) -> {
             dialog.dismiss();
         });
 

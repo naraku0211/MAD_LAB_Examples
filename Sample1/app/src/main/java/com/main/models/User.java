@@ -1,9 +1,17 @@
 package com.main.models;
 
 public class User {
-    private String username, password, firstName, lastName;
+    private String id, username, password, firstName, lastName;
 
     public User() {
+    }
+
+    public User(String id, String username, String password, String firstName, String lastName) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public User(String username, String password, String firstName, String lastName) {
@@ -11,6 +19,10 @@ public class User {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public User(String password) {
+        this.password = password;
     }
 
     public String getUsername() {

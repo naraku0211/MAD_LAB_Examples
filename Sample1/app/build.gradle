@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -33,9 +34,20 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    //Core/Native Dependencies
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
-    //def fragment_version = "1.6.1"
-    // Java language implementation
-    //implementation "androidx.fragment:fragment:$fragment_version"
+
+    //Firebase Dependencies
+    implementation platform('com.google.firebase:firebase-bom:32.6.0')
+    implementation 'com.google.firebase:firebase-auth-common:9.8.0'
+    implementation 'com.google.firebase:firebase-common:20.4.2'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    //
+    implementation 'com.google.firebase:firebase-database:20.3.0'
+    implementation 'com.google.firebase:firebase-database-collection:18.0.1'
+
+
+    //Custom Dependencies
+
 }
